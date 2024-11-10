@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black's Barbershop</title>
+    <style>
+        /* CSS para controle de visibilidade das seções */
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+
+        body {
+    background-color: #212226;
+}
+
+.top {
+    background-color: #3d3e41;
+    padding: 20px;
+    margin: -8px;
+    display: flex;
+    justify-content: center;
+    gap: 100px; 
+}
+
+
+.btntop button {
+    font-family: Arial;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 180px;
+    padding: 10px 30px; 
+    font-size: 12px; 
+}
+
+.btnctt button {
+    font-family: Arial;
+    font-weight: bold;
+    background-color: #212226;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 180px;
+    padding: 10px 30px; 
+    font-size: 12px; 
+}
+
+.btnctt button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.btntop button:hover {
+    background-color: #212226;
+    color: white;
+    transform: scale(1.1);
+}
+
+.logo {
+    margin-top: -100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    float: left;
+    margin-left: 170px;
+}
+
+.logo img {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+}
+
+.titlogo {
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    margin-left: 100px;
+}
+.rs {
+    margin-top: -180px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    float: left;
+    margin-left: 855px;
+    gap: 20px;
+}
+
+.rs button{
+    font-family: Arial;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 120px;
+    padding: 10px 30px; 
+    font-size: 12px; 
+}
+
+.rs button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.wpp {
+    background: linear-gradient(to right, #779b77, #4e974e);
+}
+
+.inst {
+    background: linear-gradient(to right, #695d95, #d172c4, #dc8b65);
+}
+
+.img {
+    background-color: #3d3e41;
+    width: 101%;
+    height: 250px;
+    margin-left: -7px;
+    margin-top: -50px;
+    color: white;
+    font-family: Arial;
+    font-weight: bold;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.img img {
+    border-radius: 20px;
+}
+
+.img img, .img p {
+    margin: 50px; 
+}
+
+footer {
+    position: fixed; 
+    font-family: Arial;
+    font-weight: bold;
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+    gap: 200px;
+}
+
+.rodape {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: -15px;
+gap: 100px;
+}
+
+.rodape img {
+width: 30px;
+height: 30px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+}
+.top {
+    gap: 100px;
+}
+
+.img img {
+    width: 150px;
+}
+
+.img p {
+    margin: 0 50px;
+}
+
+footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+
+.rodape {
+    flex-direction: row;
+}
+
+body {
+    background-color: #212226;
+}
+
+.topqsn {
+    background-color: #3d3e41;
+    padding: 20px;
+    margin: -8px;
+    display: flex;
+    justify-content: center;
+    gap: 100px; 
+}
+
+
+.btntopqsn button {
+    font-family: Arial;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 180px;
+    padding: 10px 30px; 
+    font-size: 12px; 
+}
+
+.btnqsn button {
+    font-family: Arial;
+    font-weight: bold;
+    background-color: #212226;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+    width: 180px;
+    padding: 10px 30px; 
+    font-size: 12px; 
+}
+
+.btnqsn button:hover {
+    color: white;
+    transform: scale(1.1);
+}
+
+.btntopqsn button:hover {
+    background-color: #212226;
+    color: white;
+    transform: scale(1.1);
+}
+
+.corpo {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #3d3e41;
+    width: 101%;
+    height: 500px;
+    gap: 130px;
+    margin-top: 90px;
+    margin-left: -8px;
+    color: white;
+    font-family: Arial;
+}
+
+.img1 img {
+    border-radius: 20px;
+    margin-top: 4px;
+}
+
+footer {
+    position: fixed; 
+    font-family: Arial;
+    font-weight: bold;
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    color: white; 
+    text-align: center; 
+    display: flex;
+    justify-content: center;
+    padding: 10px; 
+    gap: 200px;
+}
+
+.rodapeqsn {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: -15px;
+gap: 100px;
+}
+
+.rodapeqsn img {
+width: 30px;
+height: 30px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+.topqsn {
+    gap: 100px;
+}
+
+footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 200px;
+}
+
+.rodapeqsn {
+    flex-direction: row;
+}
+
+}
+    </style>
+</head>
+
+<body>
+    <!-- Cabeçalho com botões de navegação -->
+    <header>
+        <div class="top">
+            <div class="btntop">
+                <button onclick="showSection('home')">INÍCIO</button>
+            </div>
+            <div class="btntop">
+                <button onclick="showSection('agendamentos')" id="btn">AGENDAMENTOS</button>
+            </div>
+            <div class="btntop">
+                <button onclick="showSection('about')">QUEM SOMOS NÓS</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Primeira seção (Início) -->
+    <section id="home" class="section active">
+        <div class="logo">
+            <img src="imagens/Logo.png" alt="Descrição da imagem">
+            <h1 class="titlogo">VENHA CONHECER NOSSO ESPAÇO</h1>
+        </div>
+
+        <div class="rs">
+            <a href="https://api.whatsapp.com/send?phone=5599981452957&fbclid=PAZXh0bgNhZW0CMTEAAaZczic7eh9JGzIz9-JC-AooSS-u3QZjGWN1ye3NW2R5ZH8WS_Ue7MugvnY_aem_nY9C9LDyjkZBR0ttaguorA"><button class="wpp">whatsapp</button></a>
+            <a href="https://www.instagram.com/blacksbarbershop_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><button class="inst">Instagram</button></a>
+        </div>
+
+        <div class="img">
+            <img src="imagens/entrada.png" alt="Descrição da imagem" width="150" height="250">
+            <p>Black's Barbershop:<br> Seu novo refúgio<br> de estilo<br><br> Modernidade e tradição<br> em um só lugar</p>
+            <img src="imagens/dentro.png" alt="Descrição da imagem" width="150" height="250">
+            <p>Um ambiente moderno<br> e sofisticado, projetado<br> para atender aos homens<br> mais exigentes</p>
+        </div>
+    </section>
+
+    <!-- Segunda seção (Quem Somos) -->
+    <section id="about" class="section">
+        <div class="corpo">
+            <div class="img1">
+                <img src="imagens/barbeirotd.jpg" alt="Descrição da imagem" width="500" height="500">
+            </div>
+            <div class="text">
+                <h3>Quem somos nós:</h3>
+                <p>Na Black's, temos um propósito claro: transformar a<br> experiência masculina em algo extraordinário. Mais<br> do que um simples corte de cabelo ou barba, nosso<br> foco é promover a autoestima e o bem-estar dos<br> nossos clientes.<br><br>
+                Nosso espaço se destaca pela abordagem moderna,<br> onde cada detalhe é pensado para oferecer um<br> atendimento excepcional. Aqui, você não é apenas<br> um cliente; é um amigo que merece todo o cuidado e<br> atenção.<br><br>
+                Ao entrar na Black's, você é recebido em um<br> ambiente acolhedor, perfeito para relaxar enquanto<br> cuidamos do seu visual. Reserve seu horário e<br> desfrute de uma experiência única, sem pressa.<br> Durante o atendimento, você pode degustar uma<br> cerveja ou um delicioso café expresso, tornando sua<br> visita ainda mais especial.<br><br>
+                Na Black's Barbeariashop, sua satisfação é nossa<br> prioridade. Venha nos visitar e descubra um novo<br> conceito em barbearia!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="rodape">
+            <img src="imagens/loc.png" alt="Descrição da imagem">
+            <p>Rua Beta, 1489, Bacuri<br>ao lado do Colégio Municipal Santa Laura.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript para alternar visibilidade -->
+    <script>
+        document.getElementById("btn").addEventListener("click",()=>{
+            window.location.href = "agendamento.html";
+        })
+        function showSection(sectionId) {
+            // Remove a classe "active" de todas as seções
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Adiciona a classe "active" apenas à seção selecionada
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+</body>
+</html>

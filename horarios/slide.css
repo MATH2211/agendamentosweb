@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: scroll; /* Ativa a barra de rolagem horizontal */
+    white-space: nowrap; /* Mantém os itens em linha */
+}
+
+.slider {
+    display: flex;
+}
+
+.slide {
+    min-width: 300px; /* Largura mínima para os slides */
+    height: 200px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+
+.slide.active {
+    background-color: #4caf50; /* Cor de fundo quando ativada */
+    color: white; /* Cor do texto quando ativada */
+}
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-rows: repeat(8, 1fr); /* 8 linhas */
+    gap: 10px; /* Espaçamento entre as divs */
+    width: 80%; /* Largura do grid */
+    max-width: 800px; /* Largura máxima */
+}
+
+.time-slot {
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Altura completa */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.time-slot.active {
+    background-color: #007BFF; /* Cor de fundo da div ativa */
+    border-color: #0056b3; /* Borda da div ativa */
+    color: #fff; /* Cor do texto da div ativa */
+}
+
+
+
+.agendamento .bot p{
+    
+}

@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: scroll; /* Ativa a barra de rolagem horizontal */
+    white-space: nowrap; /* Mantém os itens em linha */
+}
+
+.slider {
+    display: flex;
+}
+
+.slide {
+    min-width: 300px; /* Largura mínima para os slides */
+    height: 200px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #333;
+    border-radius: 10px;
+    flex-shrink: 0;
+}

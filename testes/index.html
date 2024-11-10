@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <a href="#agendamentos" class="link-agendamentos">Ir para Agendamentos</a>
+        <p>Conteúdo da página principal...</p>
+        <input type="text" id="cellphone" placeholder="(XX) XXXXX-XXXX" maxlength="15">
+    </div>
+    
+    <div class="agendamentos" id="agendamentos">
+        <a href="#main" class="link-main">Voltar para a Página Principal</a>
+        <p>Conteúdo da seção de agendamentos...</p>
+    </div>
+    <script>
+        const data = [
+  {
+    "id": 12,
+    "nome": "markim",
+    "celular": "(99) 99999-9",
+    "dia": "2024-11-08T03:00:00.000Z",
+    "horas": "1430",
+    "serviconome": "18"
+  },
+  {
+    "id": 12,
+    "nome": "markim",
+    "celular": "(99) 99999-9",
+    "dia": "2024-11-08T03:00:00.000Z",
+    "horas": "1430",
+    "serviconome": "18"
+  },
+  {
+    "id": 12,
+    "nome": "markim",
+    "celular": "(99) 99999-9",
+    "dia": "2024-11-08T03:00:00.000Z",
+    "horas": "1430",
+    "serviconome": "18"
+  },
+  {
+    "id": 12,
+    "nome": "markim",
+    "celular": "(99) 99999-9",
+    "dia": "2024-11-08T03:00:00.000Z",
+    "horas": "1430",
+    "serviconome": "18"
+  }
+];
+
+const converterParaData = (dataArray) => {
+  return dataArray.map(item => {
+    const dataObjeto = new Date(item.dia);
+    const ano = dataObjeto.getFullYear();
+    const mes = String(dataObjeto.getMonth() + 1).padStart(2, '0'); // Meses começam em 0
+    const dia = String(dataObjeto.getDate()).padStart(2, '0');
+    const dataFormatada = `${ano}-${mes}-${dia}`;
+    
+    return {
+      ...item,
+      dia: dataFormatada
+    };
+  });
+};
+
+const dadosComData = converterParaData(data);
+console.log(dadosComData);
+
+    </script>
+    <script src="script.js"></script>
+    <script>
+        document.getElementById('cellphone').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, ''); // Remove caracteres não numéricos
+    value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Adiciona os parênteses e espaço após DDD
+    value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Adiciona o hífen após os primeiros 5 dígitos
+    e.target.value = value;
+});
+
+    </script>
+</body>
+</html>

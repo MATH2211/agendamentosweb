@@ -1,0 +1,136 @@
+SELECT 
+    clientes.id, 
+    clientes.nome,
+    clientes.celular,
+    horarios.dia,
+    horarios.horas,
+    agendamento.servicos AS servicoNome
+FROM 
+    agendamento
+JOIN 
+    clientes ON agendamento.idCliente = clientes.id 
+JOIN 
+    horarios ON agendamento.idHorario = horarios.id
+WHERE 
+    agendamento.idCliente = 6;
+
+
+
+
+
+
+//Selecionar informações de todas as tabelas com apenas o id do agendamento;
+
+SELECT clientes.id, clientes.nome,clientes.celular,horarios.dia,horarios.horas,servicos.nome as servicoNome
+FROM agendamento
+JOIN clientes ON agendamento.idCliente = clientes.id 
+JOIN horarios ON agendamento.idHorario =horarios.id
+JOIN servicos ON agendamento.idServico = servicos.id
+WHERE agendamento.idCliente = 1;
+
+
+//Função de input remover opções a mostrar a escolhida
+function inputName(){
+    
+    let div = document.getElementsByClassName("input")[0];
+    div.style.display = "flex";
+    document.getElementById("btn1").addEventListener("click",function(event){
+        if(document.getElementById("name").value){
+            let name = document.getElementById('name').value;
+            main.removeChild(div);
+            services(name);
+        }
+    });
+}
+
+
+async function getHoras(dia) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/horarios?dia=${dia}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar horários disponíveis');
+        }
+
+        const data = await response.json();
+        console.log("Horários disponíveis:", data);
+        return data;
+    } catch (error) {
+        //console.error("Erro:", error.message);
+        await gerarHorarios(dia);
+        return await getHoras(dia);
+    }
+}
+
+// Declara diaHorarios no escopo global, para que esteja disponível em toda a função
+
+
+async function armazenarHorarios(dia) {
+    try {
+        const horarios = await getHoras(dia);
+        if (horarios) {
+            diaHorarios.push(horarios); // Adiciona os horários disponíveis à lista
+        }
+        console.log("Lista atual de horários:", diaHorarios);
+    } catch (error) {
+        console.log(false);
+    }
+}
+async function gerarHorarios(dia) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/gerarHorarios`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ dia }) // Passa o dia no corpo da requisição
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao gerar horários');
+        }
+
+        const result = await response.json();
+        console.log(result.message); // Exibe mensagem de sucesso ao gerar horários
+    } catch (error) {
+        console.error("Erro ao gerar horários:", error);
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Antiga função get Horarios, problema: caso tenha promblema de conexão ele entra em um loop;
+async function getHoras(dia) {
+    try {
+        const response = await fetch(`http://localhost:3000/api/horarios?dia=${dia}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (!response.ok) {
+            throw new Error('Erro ao buscar horários disponíveis');
+        }
+
+        const data = await response.json();
+        console.log("Horários disponíveis:", data);
+        return data;
+    } catch (error) {
+        //console.error("Erro:", error.message);
+        await gerarHorarios(dia);
+        return await getHoras(dia);
+    }
+}
+*/

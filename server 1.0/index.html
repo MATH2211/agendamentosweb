@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Response</title>
+    
+    <script>
+        // Função para consumir a API e mostrar os dados
+        function postUser(nome,email) {
+            fetch('http://localhost:3000/api/users',{
+                method:"POST",
+                headers:{
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    "name":nome,
+                    "email":email
+                })
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.log("Erro: ",error));
+        }
+    </script>
+</head>
+<body>
+    <h1>Lista de Usuários</h1>
+    <ul id="userList">
+        <!-- A resposta da API será inserida aqui -->
+    </ul>
+</body>
+</html>

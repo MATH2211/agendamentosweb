@@ -1,0 +1,37 @@
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #007BFF;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td.servico {
+    color: #007BFF;
+    font-weight: bold;
+}

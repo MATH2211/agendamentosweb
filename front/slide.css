@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.slider-container {
+    width: 100%;
+    overflow-x: scroll; /* Ativa a barra de rolagem horizontal */
+    white-space: nowrap; /* Mantém os itens em linha */
+}
+
+.slider {
+    display: flex;
+    height: 300px;
+}
+
+.slide {
+    min-width: 25%;
+    max-width: 200px;
+    margin: 10px;
+    background-color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 24px;
+    color: #333;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+
+
+.slide.active {
+    background-color: #4caf50; /* Cor de fundo quando ativada */
+    color: white; /* Cor do texto quando ativada */
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+    grid-template-rows: repeat(8, 1fr); /* 8 linhas */
+    gap: 10px; /* Espaçamento entre as divs */
+    width: 100%; /* Largura do grid */
+     /* Largura máxima */
+}
+
+.time-slot {
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Altura completa */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.time-slot.active {
+    background-color: #007BFF; /* Cor de fundo da div ativa */
+    border-color: #0056b3; /* Borda da div ativa */
+    color: #fff; /* Cor do texto da div ativa */
+}
+
+.slide img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse o limite do slide */
+    height: auto;
+}
+
+.slide p {
+    margin-top: 10px; /* Adiciona espaço entre a imagem e o parágrafo */
+    font-size: 10px;
+    color: #333;
+    text-align: center;
+    word-wrap: break-word; /* Quebra o texto automaticamente quando exceder a largura */
+    white-space: normal;   /* Permite quebra de linha no texto */
+    height: 60px;
+}
+
+.bet{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.bet span:nth-of-type(2){
+    font-size: 15px;
+    text-align: right;
+}
+
+/* Media Query para telas menores que 1000px */
+@media (max-width: 1000px) {
+    .slider {
+        flex-direction: row; /* Muda a direção para coluna em telas menores */
+        align-items: center;    /* Centraliza os slides */
+        background-color: black;
+    }
+
+    .slide {
+        height: 100%;
+        min-width: 25%; /* Ajusta o tamanho do slide para ocupar mais espaço na tela */
+        /*margin: 5px;    /* Reduz as margens para telas menores */
+    }
+    .slider-container {
+        overflow-y: hidden; /* Desativa o scroll horizontal no slider */
+    }
+    .slide p {
+        font-size: 15px; /* Diminui o tamanho do texto do parágrafo */
+    }
+    body{
+        padding-left: 8%;
+        padding-right: 8%;
+    }   
+}
+
+.agendamento{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.agendamento p{
+    background-color: black;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.agendamento .bot p{
+    text-align: left;
+    max-width: 50%;
+    padding: 15px;
+    background-color: rgb(30, 30, 150);
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    flood-opacity: 1;
+    font-family: "Open Sans", sans-serif;
+    font-size: 17px;
+    font-stretch: 100%;
+}
+
+
+
+.agendamento .input{
+    width: 100%;
+    max-width: none;
+}
+
+.agendamento .input button{
+    max-width: none;
+}
+
+
