@@ -6,7 +6,7 @@
 
 1 - no Pg adming criar banco de dados "web"
 
-2 - importar as tabelas usando o arquivo .sql
+2 - importar as tabelas usando o arquivo backup.sql
 
 Obs: por padrão o banco não possui nenhum dado
 # Importar serviços
