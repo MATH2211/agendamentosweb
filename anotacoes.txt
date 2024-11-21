@@ -19,6 +19,8 @@ WHERE
 
 
 
+
+
 //Selecionar informações de todas as tabelas com apenas o id do agendamento;
 
 SELECT clientes.id, clientes.nome,clientes.celular,horarios.dia,horarios.horas,servicos.nome as servicoNome

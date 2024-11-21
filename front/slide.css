@@ -16,11 +16,12 @@
 }
 
 .slide {
+    box-sizing: border-box;
     min-width: 25%;
-    max-width: 200px;
+    max-width: 250px;
     margin: 10px;
     background-color: #f1f1f1;
-    display: flex;
+    display: block;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -67,18 +68,18 @@
 }
 
 .slide img {
+    width: 100%;
+    max-height: 85%;
     max-width: 100%; /* Garante que a imagem não ultrapasse o limite do slide */
-    height: auto;
 }
 
 .slide p {
-    margin-top: 10px; /* Adiciona espaço entre a imagem e o parágrafo */
+   /* Adiciona espaço entre a imagem e o parágrafo */
     font-size: 10px;
     color: #333;
     text-align: center;
     word-wrap: break-word; /* Quebra o texto automaticamente quando exceder a largura */
     white-space: normal;   /* Permite quebra de linha no texto */
-    height: 60px;
 }
 
 .bet{

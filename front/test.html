@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="sytle.css">
+    <link rel="stylesheet" href="slide.css">
+    <link rel="stylesheet" href="agendamento.css">
+    <style>
+        /* Definir o tamanho fixo para as imagens dentro do slide */
+#slide .slider .slide img {
+    width: 100%;
+    height: 200px; /* Ajuste o valor conforme necessário */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+/* Estilização para o container do slider */
+#slide {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px; /* Espaçamento entre os slides */
+}
+
+/* Cada slide é um item de flexbox, exibido em linha */
+.slider {
+    display: flex;
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px; /* Tamanho fixo para cada slide */
+    flex-shrink: 0; /* Impede que os slides encolham */
+}
+
+/* Estilização para as legendas e preços */
+#slide .slide p {
+    margin: 5px 0;
+    text-align: center;
+}
+
+.bet span {
+    margin-right: 10px; /* Ajusta o espaçamento entre os valores */
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <a href="#agendamentos" class="link-agendamentos">Ir para Agendamentos</a>
+        <div class="bot" style="display: none;">
+            <p>Olá, tudo bem? Sou a assistente virtual do(a) Bonatto Barbeshop 099 e cuido do agendamento dos serviços
+                dos profissionais dele(a), ok?</p>
+            <p>Qual o seu nome? Escreva seu nome e sobrenome, por favor.</p>
+        </div>
+        <div class="input" style="display: none;">
+            <input id='name' type='text' placeholder="Seu nome e sobrenome">
+            <button id='btn1'>Enviar</button>
+        </div>
+        <div class="user" style="display: none;">
+
+        </div>
+
+        <div class="bot">
+
+        </div>
+        
+        <div id="slide" class="slider-container" style="display: flex;">
+            <div class="slider"><div class="slide" id="51">
+                    <img src="./imagens/64.jpeg" alt="">
+                    <p>Barbaterapia</p>
+                    <p class="bet"><span>30R$</span><span>25min</span></p>
+                </div><div class="slide" id="52">
+                    <img src="./imagens/65.jpeg" alt="">
+                    <p>Barba Express</p>
+                    <p class="bet"><span>20R$</span><span>30min</span></p>
+                </div><div class="slide" id="53">
+                    <img src="./imagens/66.jpeg" alt="">
+                    <p>Corte</p>
+                    <p class="bet"><span>30R$</span><span>30min</span></p>
+                </div><div class="slide" id="54">
+                    <img src="./imagens/67.jpeg" alt="">
+                    <p>Hidratação</p>
+                    <p class="bet"><span>20R$</span><span>10min</span></p>
+                </div><div class="slide" id="55">
+                    <img src="./imagens/68.jpeg" alt="">
+                    <p>Sobrancelha</p>
+                    <p class="bet"><span>10R$</span><span>5min</span></p>
+                </div><div class="slide" id="56">
+                    <img src="./imagens/71.jpeg" alt="">
+                    <p>Máscara Black</p>
+                    <p class="bet"><span>10R$</span><span>30min</span></p>
+                </div><div class="slide" id="57">
+                    <img src="./imagens/72.jpeg" alt="">
+                    <p>Botox</p>
+                    <p class="bet"><span>65R$</span><span>30min</span></p>
+                </div><div class="slide" id="58">
+                    <img src="./imagens/73.jpeg" alt="">
+                    <p>Selagem</p>
+                    <p class="bet"><span>85R$</span><span>30min</span></p>
+                </div><div class="slide" id="59">
+                    <img src="./imagens/74.jpeg" alt="">
+                    <p>Pigmentação/Tintura</p>
+                    <p class="bet"><span>25R$</span><span>30min</span></p>
+                </div><div class="slide" id="60">
+                    <img src="./imagens/75.jpeg" alt="">
+                    <p>Luzes</p>
+                    <p class="bet"><span>100R$</span><span>30min</span></p>
+                </div><div class="slide" id="61">
+                    <img src="./imagens/76.jpeg" alt="">
+                    <p>Platinado</p>
+                    <p class="bet"><span>50R$</span><span>30min</span></p>
+                </div></div>
+
+        </div>
+        <div class="input" id="input3" style="display: none;" name="input3">
+            <button id='btn3'>Enviar</button>
+        </div>
+        <div class="user" style="display: none;">
+
+        </div>
+        <div class="bot" style="display: none;"><p>Certo, e qual o melhor dia e horário para você ser atendido?</p></div>
+        <div class="agendamento">
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide">Doming</div>
+                    <div class="slide">Segunda-feira</div>
+                    <div class="slide">Terça-feira</div>
+                    <div class="slide">Quarta-eira</div>
+                    <div class="slide">Quinta-feira</div>
+                    <div class="slide">Sextafeira</div>
+                    <div class="slide">Sábado</div>
+                    <div class="slide"></div>
+                </div>
+            </div>
+            <div class="grid-container">
+            </div>
+            <p id = "date">
+                <span>seg</span>
+                de
+                <span>outubro</span>
+                de 
+                <span></span> --
+                <span>xx:xx</span>
+            </p>
+            <div class="input" id="input3" name="input3">
+                <button id='btn4'>Enviar</button>
+            </div>
+        </div>
+        <div class="user horarioGet" style="display: flex;">
+
+        </div>
+        <div class="bot put" style="display: none;">
+            <p>Informe seu email e número de telefone</p>
+        </div>
+        <div class="input put" style="display: none;">
+            <input type='text' id = "cellphone" placeholder="(XX) XXXXX-XXXX" maxlength="15">
+            <input type="email" name="" id="email" placeholder="Digite seu email">
+            <button id='btn1'>Enviar</button>
+        </div>
+        <div class="user put">
+        </div>
+        <div class="bot final" style="display: none;">
+            <p>perfeito</p>
+        </div>
+        <div class="input final" style="display: none;">
+            <button>Meus agendamentos</button>
+            <button>Novo agendamento</button>
+        </div>
+    </div>
+    <div class="agendamentos" id="agendamentos" style="display: none;">
+        <a href="#main" class="link-main">Voltar para a Página Principal</a>
+        <div class="container">
+            <h1>Agendamentos</h1>
+            <table id="agendamentos-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Dia</th>
+                        <th>Horas</th>
+                        <th>Serviço</th>
+                    </tr>
+                </thead>
+                <tbody id="agendamentos-list">
+                    <!-- Os dados dos agendamentos serão inseridos aqui -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors")
 const app = express();
+
 const userRoutes = require("./routes/userRoutes.js");
 const emailRoutes = require("./routes/emailRoutes.js")
 // Middleware para ler JSON no corpo das requisições

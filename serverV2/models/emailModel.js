@@ -1,25 +1,22 @@
 const nodemailer = require('nodemailer');
-
-// Configuração do Nodemailer
 require('dotenv').config();
-
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     type: 'OAuth2',
-    user: process.env.EMAIL_USER,
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    refreshToken: process.env.REFRESH_TOKEN,
-    accessToken: process.env.ACCESS_TOKEN,
+    user: process.env.EMAIL_USER, // Variável de ambiente para o e-mail
+    clientId: process.env.OAUTH_CLIENT_ID, // Variável de ambiente para Client ID
+    clientSecret: process.env.OAUTH_CLIENT_SECRET, // Variável de ambiente para Client Secret
+    refreshToken: process.env.OAUTH_REFRESH_TOKEN, // Variável de ambiente para Refresh Token
+    accessToken: process.env.OAUTH_ACCESS_TOKEN // Variável de ambiente para Access Token
   },
 });
 
-
+// Teste de envio de e-mail (opcional)
 const sendEmail = async (to, subject, text) => {
   // Opções do e-mail
   const mailOptions = {
-    from: 'seu-email@gmail.com', // Seu e-mail
+    from: process.env.EMAIL_USER, // Seu e-mail
     to: to,  // Destinatário
     subject: subject,  // Assunto
     text: text,  // Corpo do e-mail

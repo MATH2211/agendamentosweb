@@ -111,7 +111,17 @@ function updateHorasDiv(el) {
     let listaAtualizada = diaHorarios.find(obj => obj.dia === id);
     return listaAtualizada;
 }
+function formatTime(input) {
+    // Converte o input para string, caso não seja
+    let str = String(input);
+    // Verifica se a string tem o formato esperado
+    if (str.length !== 4 || isNaN(str)) {
+      return "Formato inválido";
+    }
+    return str.slice(0, 2) + ":" + str.slice(2);
+}
 
+  
 
 function appendHorarios(lista) {
     let grid = document.getElementsByClassName("grid-container")[0];
@@ -121,7 +131,7 @@ function appendHorarios(lista) {
         //<div class="time-slot">08:00</div>
         let div = document.createElement("div");
         div.setAttribute("class", "time-slot");
-        div.innerText = horario.horas;
+        div.innerText = formatTime(horario.horas);
         grid.appendChild(div);
         console.log(horario.horas);
     }
@@ -312,6 +322,7 @@ async function postNewAgendamento(idcliente, idhorario, servicos) {
 }
 
 async function handleUserCreation(nome, input, email) {
+    console.log("Celuluar: "+input)
     try {
         const result = await createUser(nome, input, email);
 
@@ -339,7 +350,7 @@ async function handleUserCreation(nome, input, email) {
 
             let final = document.querySelector(".bot.final");
             if (final) {
-                final.innerHTML = `<p>Perfeito...</p><p id = "textEmail">Agendamento realizado: ${servicosGet}, ${horariosGet}. Local: Av Santa Luzia, 110</p><p>Muito obrigado, até mais!</p>`;
+                final.innerHTML = `<p>Perfeito...</p><p id = "textEmail">Agendamento realizado: ${servicosGet}, ${horariosGet}. Local: Rua Beta, 1489, Bacuri</p><p>Muito obrigado, até mais!</p>`;
                 let text = document.getElementById("textEmail").innerText;
                 let email = document.getElementById("email").value;
                 sendEmail(email,"barbearia black",text);

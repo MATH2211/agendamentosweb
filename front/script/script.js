@@ -143,6 +143,11 @@ function horarios() {
 
         putHorarios(string, horas);
         document.getElementsByClassName("agendamento")[0].style.display = "none";
+        
+        let span4 = p.getElementsByTagName("span")[3];
+        let str = span4.innerText;
+        //let formatted = str.slice(0, 2) + ":" + str.slice(2);
+        //span4.innerText = formatted;
         document.getElementsByClassName("user")[2].innerHTML = `<p class = 'name getHorario'>${p.innerText}</p>`;
         getCellphone();
     });
@@ -163,13 +168,13 @@ function getCellphone() {
 function postAgendamento() {
     let nome, input, email;
 
-    //input = document.getElementById("cellphone").value;
-    //email = document.getElementById("email").value;
-    //nome = document.getElementsByClassName("name")[0].innerText
+    input = document.getElementById("cellphone").value;
+    email = document.getElementById("email").value;
+    nome = document.getElementsByClassName("name")[0].innerText
 
-    nome = "markim"
-    input = "999999999999"
-    email = "markim"
+    ////nome = "markim"
+    //input = "999999999999"
+    //email = "markim"
     handleUserCreation(nome,input,email);
     document.querySelector(".input.final").style.display = "flex";
 }
@@ -188,9 +193,9 @@ async function getServices() {
         div.setAttribute("class", "slide");
         div.setAttribute("id", d.id);
         div.innerHTML = `
-                    <img src="./imagens/${d.id}.jpeg" alt="">
+                    <img src="./imagens/${d.idimagem}.jpeg" alt="">
                     <p>${d.nome}</p>
-                    <p class="bet"><span>${d.valor}</span><span>${d.tempo}</span></p>
+                    <p class="bet"><span>${d.valor}R$</span><span>${d.tempo}min</span></p>
                 `;
 
         slider.appendChild(div);
@@ -204,17 +209,19 @@ async function getServices() {
             if (this.classList.contains("active")) {
                 this.classList.remove("active");
             } else {
-                if (slideIndex >= 0 && slideIndex < 2) {
+                /*
+                if (slideIndex < 0) {
                     // Remove a classe 'active' de todas as slides
                     document.querySelectorAll('.slide').forEach(s => s.classList.remove('active'));
                     servicos = 0;
                     // Adiciona a classe 'active' apenas na slide clicada
                     this.classList.add('active');
-                } else if (slideIndex >= 2 && slideIndex <= slides.length) {
-                    slides[0].classList.remove("active");
-                    slides[1].classList.remove("active");
+                } else if (slideIndex >= 0 && slideIndex <= slides.length) {
+                    //slides[0].classList.remove("active");
+                    //slides[1].classList.remove("active");
                     this.classList.add('active');
-                }
+                }*/
+                this.classList.add('active');
             }
         }));
     });
