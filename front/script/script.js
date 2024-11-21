@@ -75,7 +75,7 @@ function services(nome) {
     //console.log(document.getElementsByClassName("input")[1])//style.display = 'flex';
     let input3 = document.getElementsByName("input3")[0]
     input3.style.display = "flex";
-    console.log("preot");
+
     document.getElementById("btn3").addEventListener("click", () => {
         console.log("sim sim true")
         if (checkAtivate().length > 0) {
