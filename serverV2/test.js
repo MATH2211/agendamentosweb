@@ -3,12 +3,14 @@ const { Client } = require('pg');  // Importando o cliente do PostgreSQL
 const app = express();
 
 // Configurações do banco de dados
+require('dotenv').config();
+
 const dbConfig = {
-  user: 'postgres',
-  host: 'localhost',
-  database: 'web',
-  password: 'markim',
-  port: 5432,
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_DATABASE,
+    password: process.env.DB_PASSWORD,
+    port: parseInt(process.env.DB_PORT, 10), // Certifique-se de converter a porta para número
 };
 
 // Função para testar a conexão com o banco
